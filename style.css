@@ -7,6 +7,10 @@ body {
 }
 
 /* Media Queries */
+.profile-desc {
+	font-size: calc(1rem + 0.5vw);
+}
+
 @media (max-width: 992px) {
 	h1 {
 		font-size: 2rem; /* Font size for tablets */
@@ -15,7 +19,7 @@ body {
 		font-size: 1.5rem; /* Font size for tablets */
 	}
 	h3 {
-		font-size: 1.4rem; /* Font size for tablets */
+		font-size: 1.2rem; /* Font size for tablets */
 	}
 	p {
 		font-size: 0.9rem; /* Font size for tablets */
