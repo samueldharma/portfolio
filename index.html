@@ -24,79 +24,90 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<header
-				class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
-			>
-				<a
-					href="#"
-					class="d-flex align-items-center px-5 px-md-0 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
-				>
-					<span class="fs-6 mx-1">Samuel Dharma</span>
-				</a>
+		<!-- Navigation Bar -->
+		<div class="hero-section mb-1">
+			<header>
+				<div class="container">
+					<div class="d-flex flex-wrap justify-content-center py-3">
+						<a
+							href="#"
+							class="d-flex align-items-center px-5 px-md-0 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+						>
+							<span class="fs-6 mx-1">SAMUEL DHARMA</span>
+						</a>
 
-				<ul class="nav nav-pills fs-6">
-					<li class="nav-item"><a href="#" class="nav-link">About</a></li>
-					<li class="nav-item"><a href="#" class="nav-link">Work</a></li>
-					<li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-				</ul>
-			</header>
-		</div>
-
-		<div class="container my-5">
-			<div class="row flex-row-reverse pb-0 pt-md-5 align-items-start">
-				<div
-					class="col-md-5 px-3 px-md-5 mb-4 d-flex align-items-start justify-content-center"
-				>
-					<div class="profile-pic d-flex justify-content-center rounded-3">
-						<img src="./assets/images/samuel.jpg" alt="samuel portrait" />
+						<ul class="nav nav-pills fs-6">
+							<li class="nav-item">
+								<a href="index.html" class="nav-link active">Work</a>
+							</li>
+							<li class="nav-item">
+								<a href="about.html" class="nav-link">About</a>
+							</li>
+							<li class="nav-item">
+								<a href="resume.html" class="nav-link">Resume</a>
+							</li>
+						</ul>
 					</div>
 				</div>
+			</header>
 
-				<div class="col-md-7 p-3 pt-md-3">
-					<h1 class="display-1 fw-semibold lh-1 mb-3">Full-Stack Developer</h1>
-					<p class="profile-desc">
-						Hello, my name is Samuel. I'm a full stack developer with a passion
-						for building responsive, scalable, and user-friendly web
-						applications. From designing intuitive user interfaces to creating
-						robust backend systems, I bring ideas to life through code.
+			<!-- Home Page -->
+			<div
+				class="container d-flex align-items-center justify-content-center h-75"
+			>
+				<div
+					class="d-flex flex-column align-items-center justify-content-center gap-3 m-2"
+				>
+					<span>FULL-STACK DEVELOPER</span>
+					<h1 class="display-1 fw-bold lh-1 py-3">samuel dharma</h1>
+					<p class="lead fw-light text-muted">
+						Building impactful solutions with code, one project at a time.
 					</p>
-					<div
-						class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
-					></div>
 				</div>
+			</div>
+			<div class="d-flex align-items-center justify-content-center p-3">
+				<a href="#works" class="">
+					<img
+						src="./assets/svg/chevron-down.svg"
+						alt="chevron-down"
+						width="40"
+						height="40"
+				/></a>
 			</div>
 		</div>
 
-		<div class="container py-5" id="custom-cards">
-			<h2 class="fw-semibold py-md-3 border-bottom display-6">Featured Work</h2>
+		<!-- My  Work -->
+		<div id="works" class="container py-5" id="custom-cards">
+			<h2 class="text-center fw-bold mb-4">My Work</h2>
 			<div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-4">
+				<!-- AI Programming Tutor -->
 				<div class="col">
 					<div class="card h-100 rounded-3">
 						<div class="img-work">
 							<img
-								src="./assets/images/portfolio/whats_in_my_fridge.png"
+								src="./assets/images/portfolio/chatbot.png"
 								class="card-img object-fit-cover rounded-3"
 								height="350px"
-								alt="What's In My Fridge"
+								alt="AI Programming Tutor"
 							/>
 						</div>
 
 						<div
 							class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-img-overlay"
 						>
-							<p class="display-6 lh-1 fw-bold">What's In My Fridge</p>
+							<p class="display-6 lh-1 fw-bold">AI Programming Tutor</p>
 							<p class="text-light mt-1">
-								An intuitive mobile app that helps users manage their
-								ingredients, track expiration dates, and discover new recipes,
-								all aimed at reducing food waste and promoting sustainable
-								cooking.
+								A user-friendly platform that leverages AI and knowledge graphs
+								to provide personalized assistance in programming. It offers a
+								chatbot for Data Structures guidance, a tool to analyze and
+								improve coding solutions, making programming education more
+								engaging.
 							</p>
 
 							<ul class="d-flex list-unstyled mt-auto">
 								<li class="me-auto">
 									<a
-										href="https://github.com/samueldharma/WhatsInMyFridge"
+										href="https://github.com/samueldharma/Personalized-AI-Programming-Tutor"
 										target="_blank"
 									>
 										<img
@@ -104,65 +115,20 @@
 											alt="Github"
 											width="32"
 											height="32"
-											class="rounded-circle border border-white"
+											class="rounded-circle border border-white github-icon"
 										/>
 									</a>
 								</li>
 								<li class="d-flex gap-2 align-items-center">
 									<i class="bi bi-calendar4-week"></i>
-									<small>2021</small>
+									<small>2025</small>
 								</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 
-				<div class="col">
-					<div class="card h-100 rounded-3">
-						<div class="img-work">
-							<img
-								src="./assets/images/portfolio/pymoney.png"
-								class="card-img object-fit-contain rounded-3"
-								height="350px"
-								alt="Py Money"
-							/>
-						</div>
-
-						<div
-							class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-img-overlay"
-						>
-							<h3 class="display-6 lh-1 fw-bold">Py Money</h3>
-							<p class="text-light mt-1">
-								A Python app for tracking expenses and income using a structured
-								category system. Features include category validation, one-word
-								descriptions, and text file storage for easy financial
-								management.
-							</p>
-							<ul class="d-flex list-unstyled mt-auto">
-								<li class="me-auto">
-									<a
-										href="https://github.com/samueldharma/PyMoney"
-										target="_blank"
-									>
-										<img
-											src="./assets/svg/github.svg"
-											alt="Github"
-											width="32"
-											height="32"
-											class="rounded-circle border border-white"
-										/>
-									</a>
-								</li>
-
-								<li class="d-flex gap-2 align-items-center">
-									<i class="bi bi-calendar4-week"></i>
-									<small>2022</small>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
+				<!-- Image Captioning For Visually Impaired  -->
 				<div class="col">
 					<div class="card h-100 rounded-3">
 						<div class="img-work">
@@ -196,13 +162,107 @@
 											alt="Github"
 											width="32"
 											height="32"
-											class="rounded-circle border border-white"
+											class="rounded-circle border border-white github-icon"
 										/>
 									</a>
 								</li>
 								<li class="d-flex gap-2 align-items-center">
 									<i class="bi bi-calendar4-week"></i>
 									<small>2023</small>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Py Money -->
+				<div class="col">
+					<div class="card h-100 rounded-3">
+						<div class="img-work">
+							<img
+								src="./assets/images/portfolio/pymoney.png"
+								class="card-img object-fit-contain rounded-3"
+								height="350px"
+								alt="Py Money"
+							/>
+						</div>
+
+						<div
+							class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-img-overlay"
+						>
+							<h3 class="display-6 lh-1 fw-bold">Py Money</h3>
+							<p class="text-light mt-1">
+								A Python app for tracking expenses and income using a structured
+								category system. Features include category validation, one-word
+								descriptions, and text file storage for easy financial
+								management.
+							</p>
+							<ul class="d-flex list-unstyled mt-auto">
+								<li class="me-auto">
+									<a
+										href="https://github.com/samueldharma/PyMoney"
+										target="_blank"
+									>
+										<img
+											src="./assets/svg/github.svg"
+											alt="Github"
+											width="32"
+											height="32"
+											class="rounded-circle border border-white github-icon"
+										/>
+									</a>
+								</li>
+
+								<li class="d-flex gap-2 align-items-center">
+									<i class="bi bi-calendar4-week"></i>
+									<small>2022</small>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- What's in My Fridge -->
+				<div class="col">
+					<div class="card h-100 rounded-3">
+						<div class="img-work">
+							<img
+								src="./assets/images/portfolio/whats_in_my_fridge.png"
+								class="card-img object-fit-cover rounded-3"
+								height="350px"
+								alt="What's In My Fridge"
+							/>
+						</div>
+
+						<div
+							class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-img-overlay"
+						>
+							<p class="display-6 lh-1 fw-bold">What's In My Fridge</p>
+							<p class="text-light mt-1">
+								An intuitive mobile app that helps users manage their
+								ingredients, track expiration dates, and discover new recipes,
+								all aimed at reducing food waste and promoting sustainable
+								cooking.
+							</p>
+
+							<ul class="d-flex list-unstyled mt-auto">
+								<li class="me-auto">
+									<a
+										href="https://github.com/samueldharma/WhatsInMyFridge"
+										target="_blank"
+									>
+										<img
+											src="./assets/svg/github.svg"
+											alt="Github"
+											width="32"
+											height="32"
+											class="rounded-circle border border-white github-icon"
+										/>
+									</a>
+								</li>
+								<li class="d-flex gap-2 align-items-center">
+									<i class="bi bi-calendar4-week"></i>
+									<small>2021</small>
 								</li>
 							</ul>
 						</div>
@@ -216,7 +276,6 @@
 				<div class="col">
 					<h2 class="display-6 fw-semibold mb-3">
 						Ready to bring your idea to life?<br />
-						Let's talk and make it happen!
 					</h2>
 					<a
 						class="send-mail btn btn-dark fw-semibold text-decoration-none rounded-5 p-3 my-3"
@@ -242,7 +301,7 @@
 		<!-- Footer -->
 		<footer class="bg-dark text-light py-4">
 			<div class="container d-flex flex-column align-items-center text-center">
-				<p class="mb-1">&copy; 2024 Samuel Dharma. All rights reserved.</p>
+				<p class="mb-1">&copy; Samuel Dharma</p>
 				<div class="d-flex gap-4 m-2">
 					<a
 						href="https://github.com/samueldharma"
@@ -268,13 +327,6 @@
 						<i class="bi bi-envelope" style="font-size: 1.5rem"></i>
 					</a>
 				</div>
-				<p class="mb-0">
-					<a href="#" class="text-light text-decoration-none">Privacy Policy</a>
-					|
-					<a href="#" class="text-light text-decoration-none"
-						>Terms of Service</a
-					>
-				</p>
 			</div>
 		</footer>
 
@@ -283,5 +335,7 @@
 			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 			crossorigin="anonymous"
 		></script>
+
+		<script type="JavaScript" src="./js/main.js"></script>
 	</body>
 </html>
