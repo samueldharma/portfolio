@@ -1,6 +1,14 @@
 /* ============================================================
    CURSOR — Lagging Ring + Magnetic + Text Label
 ============================================================ */
+// At the very top of cursor.js — before anything else
+if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+	document
+		.querySelectorAll("#cursor-dot, #cursor-ring, #cursor-label")
+		.forEach((el) => (el.style.display = "none"));
+	// Stop the rest of the script from running
+	throw new Error("Touch device — cursor disabled");
+}
 
 const dot = document.getElementById("cursor-dot");
 const ring = document.getElementById("cursor-ring");

@@ -1248,7 +1248,7 @@ body.cursor-hidden #cursor-label {
 	opacity: 0 !important;
 }
 
-/* Disable custom cursor on touch devices */
+/* Real touch devices — capability based */
 @media (hover: none) and (pointer: coarse) {
 	* {
 		cursor: auto !important;
@@ -1256,7 +1256,19 @@ body.cursor-hidden #cursor-label {
 	#cursor-dot,
 	#cursor-ring,
 	#cursor-label {
-		display: none;
+		display: none !important;
+	}
+}
+
+/* DevTools simulation — screen size based */
+@media (max-width: 1024px) {
+	* {
+		cursor: auto !important;
+	}
+	#cursor-dot,
+	#cursor-ring,
+	#cursor-label {
+		display: none !important;
 	}
 }
 /* ============================================================
