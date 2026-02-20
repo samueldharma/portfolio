@@ -1,480 +1,924 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Samuel</title>
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-		/>
+		<title>Samuel Dharma — Full-Stack Developer</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="./css/style.css" />
 	</head>
-
 	<body>
-		<!-- Navigation Bar -->
-		<div class="hero-section mb-1">
-			<header>
-				<div class="container">
-					<div class="d-flex flex-wrap justify-content-center py-3">
-						<a
-							href="#"
-							class="d-flex align-items-center px-5 px-md-0 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
-						>
-							<span class="fs-6 mx-1">SAMUEL DHARMA</span>
-						</a>
+		<!-- CURSOR ELEMENTS -->
+		<div id="cursor-dot"></div>
+		<div id="cursor-ring"></div>
+		<div id="cursor-label"></div>
 
-						<ul class="nav nav-pills fs-6">
-							<li class="nav-item">
-								<a href="index.html" class="nav-link active">Work</a>
-							</li>
-							<li class="nav-item">
-								<a href="about.html" class="nav-link">About</a>
-							</li>
-							<li class="nav-item">
-								<a href="resume.html" class="nav-link">Resume</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</header>
-
-			<!-- Home Page -->
-			<div
-				class="container d-flex align-items-center justify-content-center h-75"
-			>
-				<div
-					class="d-flex flex-column align-items-center justify-content-center gap-3 m-2"
-				>
-					<span>FULL-STACK DEVELOPER</span>
-					<h1 class="display-1 fw-bold lh-1 py-3">samuel dharma</h1>
-					<p class="lead fw-light text-muted">
-						Building impactful solutions with code, one project at a time.
-					</p>
-				</div>
-			</div>
-			<div class="d-flex align-items-center justify-content-center p-3">
-				<a href="#works" class="">
-					<img
-						src="./assets/svg/chevron-down.svg"
-						alt="chevron-down"
-						width="40"
-						height="40"
-				/></a>
-			</div>
+		<!-- ============ BACKGROUND ORBS ============ -->
+		<div class="bg-orbs" aria-hidden="true">
+			<div class="orb orb-1"></div>
+			<div class="orb orb-2"></div>
+			<div class="orb orb-3"></div>
+			<div class="orb orb-4"></div>
+			<div class="orb orb-5"></div>
+			<div class="orb orb-6"></div>
 		</div>
 
-		<!-- My  Work -->
-		<div id="works" class="container py-5" id="custom-cards">
-			<h2 class="text-center fw-bold mb-4">My Work</h2>
-			<div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-4">
-				<!-- TBrain RAG and LLM Competition -->
-				<div class="col">
-					<div class="card h-100 rounded-3">
-						<div class="img-work">
+		<!-- ============ NAVIGATION ============ -->
+		<nav id="navbar">
+			<div class="container">
+				<div class="nav-inner">
+					<a href="#hero" class="nav-logo">Samuel<span>.</span></a>
+
+					<!-- Desktop links -->
+					<ul class="nav-links" id="navLinks">
+						<li><a href="#hero" class="active">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#projects">Work</a></li>
+						<li><a href="#experience">Experience</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+
+					<div style="display: flex; align-items: center; gap: 0.5rem">
+						<button
+							class="theme-toggle"
+							id="themeToggle"
+							aria-label="Toggle theme"
+						>
+							<span
+								id="themeIcon"
+								style="
+									display: inline-flex;
+									align-items: center;
+									justify-content: center;
+									width: 16px;
+									height: 16px;
+								"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<circle cx="12" cy="12" r="5" />
+									<line x1="12" y1="1" x2="12" y2="3" />
+									<line x1="12" y1="21" x2="12" y2="23" />
+									<line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+									<line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+									<line x1="1" y1="12" x2="3" y2="12" />
+									<line x1="21" y1="12" x2="23" y2="12" />
+									<line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+									<line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+								</svg>
+							</span>
+						</button>
+						<div class="hamburger" id="hamburger" aria-label="Open menu">
+							<span></span><span></span><span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<!-- ============ HERO ============ -->
+		<section id="hero" style="position: relative">
+			<div class="container">
+				<div class="hero-content">
+					<!-- Left: text -->
+					<div>
+						<div class="hero-eyebrow">Full-Stack Developer</div>
+						<h1 class="hero-name">
+							Samuel<br /><span class="highlight">Dharma</span>
+						</h1>
+						<p class="hero-desc">
+							Building impactful, scalable software — from pixel-perfect UIs to
+							robust back-end systems. Currently crafting fintech solutions at
+							Bank Mandiri.
+						</p>
+						<div class="hero-cta">
+							<a href="#contact" class="btn-primary">
+								Get in touch
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<line x1="5" y1="12" x2="19" y2="12" />
+									<polyline points="12 5 19 12 12 19" />
+								</svg>
+							</a>
+							<a href="#projects" class="btn-ghost"> View work </a>
+						</div>
+						<div class="hero-stats">
+							<div class="stat">
+								<span class="stat-num">6+</span>
+								<span class="stat-label">Projects</span>
+							</div>
+							<div class="stat-divider"></div>
+							<div class="stat">
+								<span class="stat-num">3</span>
+								<span class="stat-label">Internships</span>
+							</div>
+							<div class="stat-divider"></div>
+							<div class="stat">
+								<span class="stat-num">Top 10%</span>
+								<span class="stat-label">TBrain 2024</span>
+							</div>
+						</div>
+					</div>
+					<!-- Right: avatar -->
+					<div class="hero-visual">
+						<div class="hero-avatar-wrap">
+							<div class="hero-avatar-ring"></div>
+							<img
+								src="./assets/images/samuel2.jpg"
+								alt="Samuel Dharma"
+								class="hero-avatar"
+							/>
+							<!-- <div class="hero-badge">
+								<strong>Available</strong>for new opportunities
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="scroll-hint" aria-hidden="true">Scroll</div>
+		</section>
+
+		<!-- ============ ABOUT ============ -->
+		<section id="about">
+			<div class="container">
+				<div class="about-grid">
+					<!-- Text -->
+					<div class="about-text">
+						<p class="section-label reveal">About Me</p>
+						<h2 class="section-title reveal reveal-delay-1">
+							Turning ideas into<br />elegant code
+						</h2>
+						<div class="sep reveal reveal-delay-2"></div>
+						<p class="reveal reveal-delay-2">
+							I'm a Computer Science graduate from
+							<strong>National Tsing Hua University (NTHU)</strong>, Taiwan,
+							with a deep passion for building products that are both
+							technically solid and delightful to use.
+						</p>
+						<p class="reveal reveal-delay-3">
+							From designing intuitive interfaces at Benemica, automating
+							workflows at Vistra, to building high-volume back-end services at
+							<strong>Bank Mandiri</strong> — I thrive at the intersection of
+							engineering and user experience.
+						</p>
+						<p class="reveal reveal-delay-3">
+							Outside of work, I enjoy competing in AI/ML challenges (Top 10% at
+							TBrain 2024) and exploring research in personalized learning
+							systems.
+						</p>
+						<div class="about-links reveal reveal-delay-4">
+							<a
+								href="https://github.com/samueldharma"
+								target="_blank"
+								class="icon-link"
+								aria-label="GitHub"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="18"
+									height="18"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path
+										d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+									/>
+								</svg>
+							</a>
+							<a
+								href="https://www.linkedin.com/in/samueldharma"
+								target="_blank"
+								class="icon-link"
+								aria-label="LinkedIn"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="18"
+									height="18"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path
+										d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+									/>
+									<rect x="2" y="9" width="4" height="12" />
+									<circle cx="4" cy="4" r="2" />
+								</svg>
+							</a>
+							<a
+								href="/cdn-cgi/l/email-protection#eb988a869e8e87c5989e808a9f818aab8c868a8287c5888486"
+								class="icon-link"
+								aria-label="Email"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="18"
+									height="18"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path
+										d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+									/>
+									<polyline points="22,6 12,13 2,6" />
+								</svg>
+							</a>
+							<a
+								href="./assets/files/CV_Samuel.pdf"
+								download
+								class="btn-ghost"
+								style="height: 42px; font-size: 0.82rem"
+							>
+								Download CV
+							</a>
+						</div>
+					</div>
+
+					<!-- Skills -->
+					<div>
+						<p class="section-label reveal">Tech Stack</p>
+						<h2 class="section-title reveal reveal-delay-1">Skills</h2>
+						<div class="sep reveal reveal-delay-2"></div>
+						<div class="skills-grid reveal reveal-delay-2">
+							<div class="skill-chip">
+								<div class="skill-icon">🌐</div>
+								HTML
+							</div>
+							<div class="skill-chip">
+								<div class="skill-icon">🎨</div>
+								CSS
+							</div>
+							<div class="skill-chip">
+								<div class="skill-icon">⚡</div>
+								JavaScript
+							</div>
+							<div class="skill-chip">
+								<div class="skill-icon">🐍</div>
+								Python
+							</div>
+							<div class="skill-chip">
+								<div class="skill-icon">☕</div>
+								Java
+							</div>
+							<div class="skill-chip">
+								<div class="skill-icon">🍃</div>
+								Spring Boot
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ PROJECTS ============ -->
+		<section id="projects">
+			<div class="container">
+				<p class="section-label reveal">Portfolio</p>
+				<h2 class="section-title reveal reveal-delay-1">Selected Work</h2>
+				<p class="section-sub reveal reveal-delay-2">
+					A mix of competitive ML, full-stack apps, and AI-powered tools — built
+					to solve real problems.
+				</p>
+
+				<div class="projects-grid">
+					<!-- TBrain -->
+					<div class="project-card reveal reveal-delay-1">
+						<div class="project-img">
 							<img
 								src="./assets/images/portfolio/tbrain.png"
-								class="card-img object-fit-contain rounded-3"
-								height="350px"
 								alt="TBrain AI CUP 2024"
+								loading="lazy"
 							/>
+							<div class="project-img-overlay"></div>
 						</div>
-
-						<div
-							class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-img-overlay"
-						>
-							<p class="display-6 lh-1 fw-bold">
+						<div class="project-body">
+							<div class="project-meta">
+								<span class="project-year">2024</span>
+							</div>
+							<h3 class="project-title">TBrain AI CUP 2024</h3>
+							<p class="project-desc">
+								Placed top 10% in a financial & insurance Q&A competition by
+								leveraging advanced RAG and knowledge retrieval systems to boost
+								accuracy.
+							</p>
+							<div class="project-footer">
 								<a
 									href="https://tbrain.trendmicro.com.tw/Competitions/Details/37"
 									target="_blank"
-									style="text-decoration: none; color: inherit"
-									>TBrain AI CUP 2024
+									class="project-link"
+								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
-										width="16"
-										height="16"
-										fill="currentColor"
-										class="bi bi-box-arrow-in-up-right"
-										viewBox="0 0 16 16"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
 									>
 										<path
-											fill-rule="evenodd"
-											d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5"
+											d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
 										/>
-										<path
-											fill-rule="evenodd"
-											d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0z"
-										/></svg
-								></a>
-							</p>
-							<p class="text-light mt-1">
-								Placed in the top 10% of the TBrain 2024 financial and insurance
-								Q&A competition by leveraging advanced knowledge retrieval
-								methods and databases to enhance retrieval accuracy.
-							</p>
-
-							<ul class="d-flex list-unstyled mt-auto">
-								<li class="me-auto">
-									<a
-										href="https://github.com/samueldharma/tbrain-ai-cup.git"
-										target="_blank"
+										<polyline points="15 3 21 3 21 9" />
+										<line x1="10" y1="14" x2="21" y2="3" />
+									</svg>
+									Live
+								</a>
+								<a
+									href="https://github.com/samueldharma/tbrain-ai-cup.git"
+									target="_blank"
+									class="project-link"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
 									>
-										<img
-											src="./assets/svg/github.svg"
-											alt="Github"
-											width="32"
-											height="32"
-											class="rounded-circle border border-white github-icon"
+										<path
+											d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
 										/>
-									</a>
-								</li>
-								<li class="d-flex gap-2 align-items-center">
-									<i class="bi bi-calendar4-week"></i>
-									<small>2024</small>
-								</li>
-							</ul>
+									</svg>
+									GitHub
+								</a>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<!-- Emotion Classification in Tweets -->
-				<div class="col">
-					<div class="card h-100 rounded-3">
-						<div class="img-work">
+					<!-- Emotion Classification -->
+					<div class="project-card reveal reveal-delay-2">
+						<div class="project-img">
 							<img
 								src="./assets/images/portfolio/emotion.png"
-								class="card-img object-fit-contain rounded-3"
-								height="350px"
-								alt="Emotion Classification in Tweets"
+								alt="Emotion Classification"
+								loading="lazy"
 							/>
+							<div class="project-img-overlay"></div>
 						</div>
-
-						<div
-							class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-img-overlay"
-						>
-							<p class="display-6 lh-1 fw-bold">
+						<div class="project-body">
+							<div class="project-meta">
+								<span class="project-year">2024</span>
+							</div>
+							<h3 class="project-title">Emotion Classification in Tweets</h3>
+							<p class="project-desc">
+								Kaggle NLP competition — applied data mining and feature
+								engineering to classify tweets across 8 emotion categories.
+							</p>
+							<div class="project-footer">
 								<a
 									href="https://www.kaggle.com/competitions/dm-2024-isa-5810-lab-2-homework/"
 									target="_blank"
-									style="text-decoration: none; color: inherit"
-									>Emotion Classification in Tweets
+									class="project-link"
+								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
-										width="16"
-										height="16"
-										fill="currentColor"
-										class="bi bi-box-arrow-in-up-right"
-										viewBox="0 0 16 16"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
 									>
 										<path
-											fill-rule="evenodd"
-											d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5"
+											d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
 										/>
+										<polyline points="15 3 21 3 21 9" />
+										<line x1="10" y1="14" x2="21" y2="3" />
+									</svg>
+									Kaggle
+								</a>
+								<a
+									href="https://github.com/samueldharma/DM2024-Lab2-Homework.git"
+									target="_blank"
+									class="project-link"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
 										<path
-											fill-rule="evenodd"
-											d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0z"
-										/></svg
-								></a>
-							</p>
-							<p class="text-light mt-1">
-								Worked on an emotion classification task using a Twitter
-								dataset, applying data preprocessing, feature engineering, and
-								data mining techniques to build a model capable of predicting
-								emotions across eight categories.
-							</p>
-
-							<ul class="d-flex list-unstyled mt-auto">
-								<li class="me-auto">
-									<a
-										href="https://github.com/samueldharma/DM2024-Lab2-Homework.git"
-										target="_blank"
-									>
-										<img
-											src="./assets/svg/github.svg"
-											alt="Github"
-											width="32"
-											height="32"
-											class="rounded-circle border border-white github-icon"
+											d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
 										/>
-									</a>
-								</li>
-								<li class="d-flex gap-2 align-items-center">
-									<i class="bi bi-calendar4-week"></i>
-									<small>2024</small>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<!-- AI Programming Tutor -->
-				<div class="col">
-					<div class="card h-100 rounded-3">
-						<div class="img-work">
-							<img
-								src="./assets/images/portfolio/chatbot.png"
-								class="card-img object-fit-cover rounded-3"
-								height="350px"
-								alt="AI Programming Tutor"
-							/>
-						</div>
-
-						<div
-							class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-img-overlay"
-						>
-							<p class="display-6 lh-1 fw-bold">AI Programming Tutor</p>
-							<p class="text-light mt-1">
-								A user-friendly platform that leverages AI and knowledge graphs
-								to provide personalized assistance in programming. It offers a
-								chatbot for Data Structures guidance, a tool to analyze and
-								improve coding solutions, making programming education more
-								engaging.
-							</p>
-
-							<ul class="d-flex list-unstyled mt-auto">
-								<li class="me-auto">
-									<a
-										href="https://github.com/samueldharma/Personalized-AI-Programming-Tutor"
-										target="_blank"
-									>
-										<img
-											src="./assets/svg/github.svg"
-											alt="Github"
-											width="32"
-											height="32"
-											class="rounded-circle border border-white github-icon"
-										/>
-									</a>
-								</li>
-								<li class="d-flex gap-2 align-items-center">
-									<i class="bi bi-calendar4-week"></i>
-									<small>2024</small>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<!-- Image Captioning For Visually Impaired  -->
-				<div class="col">
-					<div class="card h-100 rounded-3">
-						<div class="img-work">
-							<img
-								src="./assets/images/portfolio/image_captioning.jpg"
-								class="card-img object-fit-contain rounded-3"
-								height="350px"
-								alt="Image Captioning For Visually Impaired"
-							/>
-						</div>
-
-						<div
-							class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-img-overlay"
-						>
-							<h3 class="display-6 lh-1 fw-bold">
-								Image Captioning For Visually Impaired
-							</h3>
-							<p class="text-light mt-1">
-								An AI-powered solution that combines image captioning and facial
-								recognition to help visually impaired individuals understand and
-								interact with visual content through descriptive audio feedback.
-							</p>
-							<ul class="d-flex list-unstyled mt-auto">
-								<li class="me-auto">
-									<a
-										href="https://github.com/samueldharma/Image-Captioning"
-										target="_blank"
-									>
-										<img
-											src="./assets/svg/github.svg"
-											alt="Github"
-											width="32"
-											height="32"
-											class="rounded-circle border border-white github-icon"
-										/>
-									</a>
-								</li>
-								<li class="d-flex gap-2 align-items-center">
-									<i class="bi bi-calendar4-week"></i>
-									<small>2023</small>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<!-- Py Money -->
-				<div class="col">
-					<div class="card h-100 rounded-3">
-						<div class="img-work">
-							<img
-								src="./assets/images/portfolio/pymoney.png"
-								class="card-img object-fit-contain rounded-3"
-								height="350px"
-								alt="Py Money"
-							/>
-						</div>
-
-						<div
-							class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-img-overlay"
-						>
-							<h3 class="display-6 lh-1 fw-bold">Py Money</h3>
-							<p class="text-light mt-1">
-								A Python app for tracking expenses and income using a structured
-								category system. Features include category validation, one-word
-								descriptions, and text file storage for easy financial
-								management.
-							</p>
-							<ul class="d-flex list-unstyled mt-auto">
-								<li class="me-auto">
-									<a
-										href="https://github.com/samueldharma/PyMoney"
-										target="_blank"
-									>
-										<img
-											src="./assets/svg/github.svg"
-											alt="Github"
-											width="32"
-											height="32"
-											class="rounded-circle border border-white github-icon"
-										/>
-									</a>
-								</li>
-
-								<li class="d-flex gap-2 align-items-center">
-									<i class="bi bi-calendar4-week"></i>
-									<small>2022</small>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<!-- What's in My Fridge -->
-				<div class="col">
-					<div class="card h-100 rounded-3">
-						<div class="img-work">
-							<img
-								src="./assets/images/portfolio/whats_in_my_fridge.png"
-								class="card-img object-fit-cover rounded-3"
-								height="350px"
-								alt="What's In My Fridge"
-							/>
-						</div>
-
-						<div
-							class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 card-img-overlay"
-						>
-							<p class="display-6 lh-1 fw-bold">What's In My Fridge</p>
-							<p class="text-light mt-1">
-								An intuitive mobile app that helps users manage their
-								ingredients, track expiration dates, and discover new recipes,
-								all aimed at reducing food waste and promoting sustainable
-								cooking.
-							</p>
-
-							<ul class="d-flex list-unstyled mt-auto">
-								<li class="me-auto">
-									<a
-										href="https://github.com/samueldharma/WhatsInMyFridge"
-										target="_blank"
-									>
-										<img
-											src="./assets/svg/github.svg"
-											alt="Github"
-											width="32"
-											height="32"
-											class="rounded-circle border border-white github-icon"
-										/>
-									</a>
-								</li>
-								<li class="d-flex gap-2 align-items-center">
-									<i class="bi bi-calendar4-week"></i>
-									<small>2021</small>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container my-5">
-			<div class="row align-items-start">
-				<div class="col">
-					<h2 class="display-6 fw-semibold mb-3">
-						Ready to bring your idea to life?<br />
-					</h2>
-					<a
-						class="send-mail btn btn-dark fw-semibold text-decoration-none rounded-5 p-3 my-3"
-						href="mailto:samuel.sukatja@gmail.com"
-						><div class="d-flex align-items-center gap-3">
-							Drop me a line
-							<div
-								class="circle1 d-flex justify-content-center align-items-center bg-dark rounded-circle"
-							>
-								<div class="circle2 rounded-circle bg-white"></div>
-								<img
-									src="./assets/svg/arrow-up-right.svg"
-									alt="Arrow Icon"
-									class="arrow-icon"
-								/>
+									</svg>
+									GitHub
+								</a>
 							</div>
 						</div>
-					</a>
+					</div>
+
+					<!-- AI Programming Tutor -->
+					<div class="project-card reveal reveal-delay-3">
+						<div class="project-img">
+							<img
+								src="./assets/images/portfolio/chatbot.png"
+								alt="AI Programming Tutor"
+								loading="lazy"
+							/>
+							<div class="project-img-overlay"></div>
+						</div>
+						<div class="project-body">
+							<div class="project-meta">
+								<span class="project-year">2024</span>
+							</div>
+							<h3 class="project-title">AI Programming Tutor</h3>
+							<p class="project-desc">
+								Personalized platform using AI and knowledge graphs to guide
+								students through Data Structures with chatbot assistance and
+								solution analysis.
+							</p>
+							<div class="project-footer">
+								<a
+									href="https://github.com/samueldharma/Personalized-AI-Programming-Tutor"
+									target="_blank"
+									class="project-link"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<path
+											d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+										/>
+									</svg>
+									GitHub
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Image Captioning -->
+					<div class="project-card reveal reveal-delay-4">
+						<div class="project-img">
+							<img
+								src="./assets/images/portfolio/image_captioning.jpg"
+								alt="Image Captioning"
+								loading="lazy"
+							/>
+							<div class="project-img-overlay"></div>
+						</div>
+						<div class="project-body">
+							<div class="project-meta">
+								<span class="project-year">2023</span>
+							</div>
+							<h3 class="project-title">
+								Image Captioning for Visually Impaired
+							</h3>
+							<p class="project-desc">
+								AI-powered solution combining image captioning and facial
+								recognition to help visually impaired users understand visual
+								content via descriptive audio.
+							</p>
+							<div class="project-footer">
+								<a
+									href="https://github.com/samueldharma/Image-Captioning"
+									target="_blank"
+									class="project-link"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<path
+											d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+										/>
+									</svg>
+									GitHub
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- PyMoney -->
+					<div class="project-card reveal reveal-delay-1">
+						<div class="project-img">
+							<img
+								src="./assets/images/portfolio/pymoney.png"
+								alt="PyMoney"
+								loading="lazy"
+							/>
+							<div class="project-img-overlay"></div>
+						</div>
+						<div class="project-body">
+							<div class="project-meta">
+								<span class="project-year">2022</span>
+							</div>
+							<h3 class="project-title">Py Money</h3>
+							<p class="project-desc">
+								Python expense tracker with structured categories, validation,
+								and text-based persistence for lightweight personal finance
+								management.
+							</p>
+							<div class="project-footer">
+								<a
+									href="https://github.com/samueldharma/PyMoney"
+									target="_blank"
+									class="project-link"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<path
+											d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+										/>
+									</svg>
+									GitHub
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- What's in My Fridge -->
+					<div class="project-card reveal reveal-delay-2">
+						<div class="project-img">
+							<img
+								src="./assets/images/portfolio/whats_in_my_fridge.png"
+								alt="What's In My Fridge"
+								loading="lazy"
+							/>
+							<div class="project-img-overlay"></div>
+						</div>
+						<div class="project-body">
+							<div class="project-meta">
+								<span class="project-year">2021</span>
+							</div>
+							<h3 class="project-title">What's In My Fridge</h3>
+							<p class="project-desc">
+								Mobile app to manage ingredients, track expiration dates, and
+								discover recipes — reducing food waste through smarter cooking.
+							</p>
+							<div class="project-footer">
+								<a
+									href="https://github.com/samueldharma/WhatsInMyFridge"
+									target="_blank"
+									class="project-link"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<path
+											d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+										/>
+									</svg>
+									GitHub
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<!-- Footer -->
-		<footer class="bg-dark text-light py-4">
-			<div class="container d-flex flex-column align-items-center text-center">
-				<p class="mb-1">&copy; Samuel Dharma</p>
-				<div class="d-flex gap-4 m-2">
-					<a
-						href="https://github.com/samueldharma"
-						class="text-light"
-						target="_blank"
-						title="GitHub"
-					>
-						<i class="bi bi-github" style="font-size: 1.5rem"></i>
-					</a>
-					<a
-						href="https://www.linkedin.com/in/samueldharma"
-						class="text-light"
-						target="_blank"
-						title="LinkedIn"
-					>
-						<i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
-					</a>
-					<a
-						href="mailto:samuel.sukatja@gmail.com"
-						class="text-light"
-						title="Email"
-					>
-						<i class="bi bi-envelope" style="font-size: 1.5rem"></i>
-					</a>
+		<!-- ============ EXPERIENCE + EDUCATION ============ -->
+		<section id="experience">
+			<div class="container">
+				<p class="section-label reveal">Background</p>
+				<h2 class="section-title reveal reveal-delay-1">
+					Experience & Education
+				</h2>
+
+				<div class="exp-edu-grid">
+					<!-- Experience -->
+					<div>
+						<p class="timeline-col-title reveal">Work Experience</p>
+						<div class="timeline">
+							<div class="timeline-item reveal reveal-delay-1">
+								<div class="timeline-dot">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<rect x="2" y="7" width="20" height="14" rx="2" />
+										<path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+									</svg>
+								</div>
+								<div class="timeline-content">
+									<p class="timeline-period">Jul 2025 – Present</p>
+									<p class="timeline-org">Bank Mandiri</p>
+									<p class="timeline-role">Back-End Software Engineer</p>
+									<ul class="timeline-bullets">
+										<li>
+											Built and maintained scalable services for Livin' using
+											Java & Spring Boot
+										</li>
+										<li>
+											Designed RESTful APIs supporting mobile banking with high
+											availability
+										</li>
+										<li>
+											Handled high-volume transaction processing and third-party
+											integrations
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="timeline-item reveal reveal-delay-2">
+								<div class="timeline-dot">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<rect x="2" y="7" width="20" height="14" rx="2" />
+										<path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+									</svg>
+								</div>
+								<div class="timeline-content">
+									<p class="timeline-period">Jul 2024 – Aug 2024</p>
+									<p class="timeline-org">Vistra</p>
+									<p class="timeline-role">Software Developer Intern</p>
+									<ul class="timeline-bullets">
+										<li>
+											Automated payment voucher approval workflow, reducing
+											processing time by 30%
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="timeline-item reveal reveal-delay-3">
+								<div class="timeline-dot">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<rect x="2" y="7" width="20" height="14" rx="2" />
+										<path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+									</svg>
+								</div>
+								<div class="timeline-content">
+									<p class="timeline-period">Aug 2023 – Sept 2023</p>
+									<p class="timeline-org">Benemica</p>
+									<p class="timeline-role">UI/UX Intern</p>
+									<ul class="timeline-bullets">
+										<li>
+											Designed payroll software interface, increasing client
+											satisfaction by 20%
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Education -->
+					<div>
+						<p class="timeline-col-title reveal">Education</p>
+						<div class="timeline">
+							<div class="timeline-item reveal reveal-delay-1">
+								<div class="timeline-dot">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+										<path d="M6 12v5c3 3 9 3 12 0v-5" />
+									</svg>
+								</div>
+								<div class="timeline-content">
+									<p class="timeline-period">2021 – 2025</p>
+									<p class="timeline-org">National Tsing Hua University</p>
+									<p class="timeline-role">B.S. Computer Science</p>
+									<ul class="timeline-bullets">
+										<li>Type A Scholarship for 4 consecutive semesters</li>
+										<li>Research: "Personalized AI Tutor for Programming"</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="timeline-item reveal reveal-delay-2">
+								<div class="timeline-dot">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+										<path d="M6 12v5c3 3 9 3 12 0v-5" />
+									</svg>
+								</div>
+								<div class="timeline-content">
+									<p class="timeline-period">2018 – 2021</p>
+									<p class="timeline-org">SMAK 5 Penabur</p>
+									<p class="timeline-role">Science Major</p>
+									<ul class="timeline-bullets">
+										<li>Basketball Team member</li>
+										<li>Decoration committee, Escalades 2019</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ CONTACT ============ -->
+		<section id="contact">
+			<div class="container">
+				<div class="contact-wrap">
+					<p class="section-label reveal">Let's talk</p>
+					<h2 class="section-title reveal reveal-delay-1">
+						Have a project in mind?
+					</h2>
+					<p class="section-sub reveal reveal-delay-2" style="margin: 0 auto 0">
+						I'm open to new opportunities, freelance work, or just a good
+						conversation about tech.
+					</p>
+
+					<div class="contact-card reveal reveal-delay-3">
+						<p
+							style="
+								color: var(--text-secondary);
+								font-size: 0.875rem;
+								margin-bottom: 1rem;
+								letter-spacing: 0.05em;
+								text-transform: uppercase;
+								font-weight: 600;
+							"
+						>
+							Drop a message
+						</p>
+						<a href="mailto:samuel.sukatja@gmail.com" class="contact-email">
+							samuel.sukatja@gmail.com
+						</a>
+						<div class="contact-socials">
+							<a
+								href="https://github.com/samueldharma"
+								target="_blank"
+								class="icon-link"
+								aria-label="GitHub"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="18"
+									height="18"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path
+										d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+									/>
+								</svg>
+							</a>
+							<a
+								href="https://www.linkedin.com/in/samueldharma"
+								target="_blank"
+								class="icon-link"
+								aria-label="LinkedIn"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="18"
+									height="18"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path
+										d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+									/>
+									<rect x="2" y="9" width="4" height="12" />
+									<circle cx="4" cy="4" r="2" />
+								</svg>
+							</a>
+							<a
+								href="https://wa.me/6287773582875?text=Hi%20Samuel%2C%20I%20found%20your%20portfolio%20and%20would%20love%20to%20connect!"
+								target="_blank"
+								class="icon-link"
+								aria-label="WhatsApp"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="18"
+									height="18"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path
+										d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+									/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ FOOTER ============ -->
+		<footer>
+			<div class="container">
+				<div class="footer-inner">
+					<span>© 2025 Samuel Dharma</span>
+					<span>Built with ♥ & vanilla JS</span>
+					<a href="#hero">Back to top ↑</a>
 				</div>
 			</div>
 		</footer>
 
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-			crossorigin="anonymous"
-		></script>
-
-		<script type="JavaScript" src="./js/main.js"></script>
+		<!-- ============ JS ============ -->
+		<script src="./js/cursor.js"></script>
+		<script src="./js/main.js"></script>
 	</body>
 </html>
